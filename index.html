@@ -1,0 +1,414 @@
+<!doctype>
+<html>
+
+<head>
+
+	<!-- TRANSLATE: 'title' -->
+	<title>Vagalumes</title>
+    <meta content="text/html;charset=utf-8" http-equiv="Content-Type">
+	<meta content="utf-8" http-equiv="encoding">
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=640">
+	<link rel="icon" type="image/png" href="favicon.png">
+
+	<!-- TRANSLATE: 'name' and 'description' -->
+	<meta itemprop="name" content="Vagalumes">
+	<meta itemprop="description" content="uma pequena simulação de pequenos vagalumes">
+	<meta itemprop="image" content="http://ncase.me/fireflies/social/thumbnail.png">
+
+	<!-- TRANSLATE: 'twitter:title' and 'twitter:description' -->
+	<meta name="twitter:card" content="summary_large_image">
+	<meta name="twitter:site" content="@ncasenmare">
+	<meta name="twitter:title" content="Vagalumes">
+	<meta name="twitter:description" content="uma pequena simulação de pequenos vagalumes">
+	<meta name="twitter:creator" content="@ncasenmare">
+	<meta name="twitter:image" content="http://ncase.me/fireflies/social/thumbnail.png">
+
+	<!-- TRANSLATE: 'og:title' and 'og:description' -->
+	<meta property="og:title" content="Vagalumes">
+	<meta property="og:type" content="website">
+	<meta property="og:url" content="http://ncase.me/fireflies/">
+	<meta property="og:image" content="http://ncase.me/fireflies/social/thumbnail.png">
+	<meta property="og:description" content="uma pequena simulação de pequenos vagalumes">
+
+	<!-- Styles -->
+	<link rel="stylesheet" href="css/index.css">
+	<link rel="stylesheet" href="css/widgets.css">
+
+</head>
+<body>
+
+<!-- The firefly simulation -->
+<div id="game"></div>
+
+<!-- The WORDS! -->
+<div id="words">
+<h1>“Vagalumes”</h1>
+
+<span id="credits" style="font-size:17px">
+traduzido por <a href="https://lucasrodcosta.github.io/" target="_blank">Lucas Costa</a> |
+original <a href="http://ncase.me/fireflies/">em inglês</a></span>
+
+<p>
+Tal qual as luzes de natal flutuando gentilmente no ar, os
+vagalumes sempre adicionam um pouco de mágica às florestas
+onde vivem.
+</p>
+
+<div style="overflow:hidden;">
+	<img src="ui/chaos.png" width="150" style="float: left;"/>
+	<div style="width: 185px; float: right;">
+		<span style="font-size:1.6em; line-height:1.1em;">CLIQUE &amp; ARRASTE</span>
+		<br>
+		para criar um
+		<br>
+		pouco de caos&rarr;
+	</div>
+</div>
+
+<p>
+Mas algumas espécies de vagalumes adicionam <em>ainda mais</em> mágica.
+No Sudeste Asiático, se você andar pelas margens de um rio à noite,
+você será surpreendido por este impressionante show de luzes - cortesia
+dos vagalumes tailandeses.
+</p>
+
+<iframe width="350" height="197" src="https://www.youtube-nocookie.com/embed/ZGvtnE1Wy6U?rel=0&amp;start=64" frameborder="0" allowfullscreen></iframe>
+<p>
+Uma floresta inteira, brilhando toda de uma vez, e
+mergulhando na escuridão, e então brilhando de uma vez
+novamente - numa sincronia quase perfeita.
+Como milhares de vagalumes se coordenam?
+Quem é o maestro dessa silenciosa sinfonia?
+</p>
+
+<p>
+Isso foi um mistério por quase um século e, em 1992,
+um time de cientistas norte-americanos tentaram resolvê-lo.
+Infelizmente, mas não surpreendentemente, a imprensa
+zombou deles - <em>“O governo direciona o dinheiro
+do seu imposto para estudar vagalumes em Bornéu: uma
+ideia nada brilhante!”</em> dizia um tablóide.
+Mesmo pressionados, os cientistas pegaram sua câmeras
+e calculadoras e seguiram adiante.
+</p>
+
+<p>
+Então <em>como</em> milhares de vagalumes escolhem um líder
+para seguir, um maestro para manter seus brilhos sincronizados?
+A resposta que os cientistas encontraram é simples:
+</p>
+
+<p>
+Eles não escolhem.
+</p>
+
+<p>
+Cada vagalume tem seu <em>próprio</em> relógio interno, e
+cada vez que o relógio bate “12 horas”, o vagalume pisca.
+</p>
+
+<p>
+<img src="ui/clock.png" width="350"/>
+</p>
+
+<p>
+E ao invés de sincronizarem seus relógios a um líder central,
+cada vagalume faz o seguinte:
+</p>
+
+<p>
+Passo 1: ao ver um vagalume piscando,
+ajuste o relógio um pouco para frente.
+</p>
+
+<p>
+<img src="ui/nudge.png" width="350"/>
+</p>
+
+<p>
+Passo 2: é isso.
+</p>
+
+<p>
+Mas é mesmo possível uma pequena interação como essa realmente fazer
+uma floresta inteira cheia de vagalumes piscar em sincronia?
+Só há uma maneira de descobrir...
+</p>
+
+<hr/>
+
+	<!-- TRANSLATE: 'label', 'label-on', and 'label-off' -->
+	<widget type="toggle"
+		id="neighborNudgeRule"
+		background="#000" color="#fff"
+		background-on="#FEE27F" color-on="#000"
+
+		label="Ajustar a vizinhança:<br>(clique para ligar&rarr;)"
+		label-on="ON" label-off="OFF">
+	</widget>
+
+<hr/>
+
+<p>
+Espere. Observe cuidadosamente.
+</p>
+
+<p>
+O que você vê?
+</p>
+
+<p>
+Num primeiro momento, não muito.
+Parece que os vagalumes continuam piscando sem um padrão.
+</p>
+
+<p>
+Mas após algum tempo, você deverá notar pequenos “grupos” de vagalumes
+piscando juntos - mas esses grupos ainda estão fora de sincronia entre si.
+</p>
+
+<p>
+Depois de mais algum tempo, você começa a ver os vagalumes fazendo uma
+“onda”, assim como uma torcida animada na arquibancada de um jogo
+de futebol.
+</p>
+
+<p>
+Por fim, praticamente todos os vagalumes estarão piscando juntos - e,
+eventualmente, mesmo aqueles “desagarrados” entram na dança coletiva.
+</p>
+
+<p>
+O que é mais impressionante? Se você interromper esses vagalumes causando
+um caos...
+</p>
+
+<div style="overflow:hidden;">
+	<img src="ui/chaos.png" width="150" style="float: left;"/>
+	<div style="width: 185px; float: right;">
+		<span style="font-size:1.6em; line-height:1.1em;">CLIQUE &amp; ARRASTE</span>
+		<br>
+		para bagunçar os
+		<br>
+		vagalumes novamente &rarr;
+	</div>
+</div>
+
+<p>
+...sim, isso irá fazer os vagalumes se dividirem por um momento, mas
+lentamente eles irão se sincronizar novamente, e irão piscar juntos.
+</p>
+
+<p>
+Aqui estão mais alguns botões para você
+brincar com esses vagalumes virtuais:
+</p>
+
+<hr/>
+
+	<!-- TRANSLATE: 'label', 'label-min', and 'label-max' -->
+	<widget type="slider"
+		id="numFireflies"
+		background="#FEE27F" color="#fff"
+		min=10 max=500 step=1
+
+		label="Número de vagalumes:"
+		label-min="10" label-max="500">
+	</widget>
+
+	<!-- TRANSLATE: 'label', 'label-on', and 'label-off' -->
+	<widget type="toggle"
+		id="showClocks"
+		background="#000" color="#fff"
+		background-on="#FEE27F" color-on="#000"
+
+		label="Exibir relógios:"
+		label-on="ON" label-off="OFF">
+	</widget>
+
+	<!-- TRANSLATE: 'label', 'label-min', and 'label-max' -->
+	<widget type="slider"
+		id="clockSpeed"
+		background="#FEE27F" color="#fff"
+		min="0.2" max="2" step="0.05"
+
+		label="Velocidade do relógio dos vagalumes:"
+		label-min="lento" label-max="rápido">
+	</widget>
+
+	<!-- TRANSLATE: 'label', 'label-on', and 'label-off' -->
+	<widget type="toggle"
+		id="neighborNudgeRule"
+		background="#000" color="#fff"
+		background-on="#FEE27F" color-on="#000"
+
+		label="Ajustar a vizinhança:"
+		label-on="ON" label-off="OFF">
+	</widget>
+
+	<!-- TRANSLATE: 'label', 'label-min', and 'label-max' -->
+	<widget type="slider"
+		id="nudgeAmount"
+		background="#FEE27F" color="#fff"
+		min="0.01" max="0.10" step="0.001"
+
+		label="Quanto se deve mover o relógio ao ajustá-lo:"
+		label-min="um pouco" label-max="bastante">
+	</widget>
+
+	<!-- TRANSLATE: 'label', 'label-min', and 'label-max' -->
+	<widget type="slider"
+		id="neighborRadius"
+		background="#FEE27F" color="#fff"
+		min=50 max=500 step=10
+
+		label="O quão próximo os vagalumes devem estar?"
+		label-min="próximos" label-max="distantes">
+	</widget>
+
+	<!-- TRANSLATE: 'label' -->
+	<widget type="button"
+		id="resetFireflies"
+		background="#000" color="#fff"
+		background-hover="#FEE27F" color-hover="#000"
+
+		label="resetar os vagalumes">
+	</widget>
+
+	<!-- TRANSLATE: 'label' -->
+	<widget type="button"
+		id="resetEverything"
+		background="#000" color="#fff"
+		background-hover="#FEE27F" color-hover="#000"
+
+		label="resetar tudo">
+	</widget>
+
+<hr/>
+
+<p>
+E aqui está o segredo por trás desse truque de mágica dos vagalumes:
+</p>
+
+<div style="overflow:hidden; text-align:center">
+<img src="ui/emergence.png" width="350" style="margin-bottom:25px"/>
+<div style="width:170px; float:left;">
+	<span style="font-size:33px; line-height:10px">interações</span><br><span style="font-size:27px">em pequena escala</span>
+</div>
+<div style="width:10px; float:left; position:relative; left:-5px; top:7px">&rarr;</div>
+<div style="width:170px; float:left;">
+	<span style="font-size:33px; line-height:10px">organização</span><br><span style="font-size:27px">em larga escala</span>
+</div>
+</div>
+
+<p>
+Vagalumes não são as únicas coisas que se sincronizam
+mutuamente.
+Seus neurônios criam ondas cerebrais.
+As células do seu coração trabalham em sincronia.
+<a target="_blank" href="https://www.youtube.com/watch?v=5v5eBf2KwF8">
+Mesmo um punhado de metrônomos começam a trabalhar juntos.</a>
+Além disso tudo, o entendimento desse tipo de sincronia nos ajudam
+a entender melhor os lasers, computadores e as tecnologias de comunicação!
+</p>
+
+<p>
+E para pensar, a matemática dos sistemas auto-sincronizantes foi descoberta
+em parte por alguns poucos cientistas que apenas amavam vagalumes.
+Parece que chamar seus projetos de <em>“Uma ideia nada brilhante”</em> não
+foi uma boa ideia.
+</p>
+
+<p>
+. . .
+</p>
+
+<p>
+Você flutua suavemente, em silêncio, ocasionalmente pontuando
+a escuridão com um pequeno ponto de luz.
+Apenas por você, não há muita coisa pra ver.
+</p>
+
+<p>
+Mas toda vez que você brilha, você inspira os próximos a brilharem
+também, um pouco mais cedo do que eles brilhariam se estivessem
+sozinhos.
+E eles, por sua vez, inspiram outros que estão próximos à <em>eles</em>.
+</p>
+
+<p>
+E assim por diante.
+</p>
+
+<p>
+Inicialmente, alguns poucos grupos começam a brilhar juntos.
+E então uma onda de luz varre o enxame.
+Por fim, todos vocês estão brilhando juntos, como um farol
+brilhante, em harmonia e em sincronia.
+</p>
+
+<p>
+Que pequena interação você fará hoje, pequeno vagalume?
+</p>
+
+<hr class="footer"/>
+
+<div id="credits">
+	<p>
+	Inspirado no livro de Steven Strogatz,<br>
+	<a href="http://www.powells.com/book/sync-how-order-emerges-from-chaos-in-the-universe-nature-daily-life-9780786887217" target="_blank">
+	SYNC: How Order Emerges From Chaos In the Universe, Nature, and Daily Life
+	</a>
+	</p>
+
+	<p>
+	Criado por
+	<a href="http://ncase.me/" target="_blank">Nicky Case</a>,
+	com amor &amp; e suporte dos meus <i>patrons</i>
+	<a href="credits" target="_blank">(veja todos eles aqui)</a>
+	</p>
+
+	<p>
+	"Vagalumes" é livre, dedicado ao domínio público.
+	<a href="https://github.com/ncase/fireflies" target="_blank">(Acesse o código no Github!)</a>
+	</p>
+
+	<p>
+	<a href="https://www.patreon.com/ncase" target="_blank">
+		<span id="patreon" >me ajude no patreon &lt;3</span>
+	</a>
+	</p>
+
+	<p>&nbsp;</p>
+
+	<p>
+	
+	compartilhe com o seu enxame:<br>
+
+	<!-- TRANSLATE: 'text' -->
+	<sharing text="Vagalumes e o que eles podem nos ensinar sobre tudo. Uma simulação interativa:"
+			 link="http://ncase.me/fireflies/"></sharing>
+
+	</p>
+
+	</p>
+
+</div>
+
+</div>
+
+</body>
+</html>
+
+<!-- Library code -->
+<script src="js/pixi.min.js"></script>
+<script src="js/howler.js"></script>
+<script src="js/minpubsub.src.js"></script>
+<script src="js/helpers.js"></script>
+<script src="js/Mouse.js"></script>
+<script src="js/widgets.js"></script>
+<script src="js/sharing.js"></script>
+
+<!-- Main code -->
+<script src="js/index.js?v=2"></script>
